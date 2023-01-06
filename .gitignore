@@ -235,3 +235,7 @@ src/Tools/Smartstore.WebApi.Client/Smartstore.WebApi.Client.sln
 src/Smartstore.Packager.sln
 Log.txt
 src/Smartstore.Web/Themes/FlexMuseo/
+
+
+**deploy/App_Data
+deploy/.env

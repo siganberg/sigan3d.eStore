@@ -167,10 +167,13 @@ Logger SetupSerilog(IConfiguration configuration)
         .Enrich.FromLogContext();
 
     // Build DEBUG logger
-    if (environmentName == "Development")
-    {
-        builder.WriteTo.Debug();
-    }
+    // if (environmentName == "Development")
+    // {
+    //     builder.WriteTo.Console();
+    // }
+    
+    builder.WriteTo.Console();
+    
 
     var strDbMinLevel = configuration["Serilog:MinimumLevel:Database"];
     var dbMinLevel = strDbMinLevel.HasValue()

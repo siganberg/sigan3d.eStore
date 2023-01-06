@@ -1,0 +1,23 @@
+﻿version: '3.9'
+
+services:
+    sqlserver:
+        container_name: sqlserver
+        hostname: sqlserver
+        image: mcr.microsoft.com/azure-sql-edge:1.0.6
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=${DB_PASSWORD}
+        ports:
+            - 1433:1433
+
+    
+    e-store:
+        container_name: estore
+        hostname: estore
+        image: siganberg/sigan3d-estore
+        volumes:
+            - ./App_Data:/app/App_Data
+        ports:
+            - 8080:80
+ 
